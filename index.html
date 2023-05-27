@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>ToDoList</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Shopping List</h1>
+        <div class="container">
+            <form>
+                <div class="search-bar">
+                    <input type="text" placeholder="List...">
+                    <button type="submit">
+                        <img src="/images/icon.svg" alt="Search">
+                    </button>
+                </div>
+                <p id="q"></p>
+
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        let input = prompt("what do u want to do");
+        const todo = ['Money', 'Clothes'];
+        while (input !== "quit" && input !== "q") {
+            if (input === 'list') {
+                console.log('------------------')
+                for (let i = 0; i < todo.length; i++) {
+                    console.log(`${i}: ${todo[i]}`)
+                }
+                console.log('------------------')
+
+            } else if (input === 'new') {
+                const p2 = prompt('What would you like to add');
+                todo.push(p2);
+                console.log(`${p2} is added to the list`);
+            } else if (input === 'delete') {
+                const p3 = prompt('Which index would you like to delete');
+                todo.splice(p3, 1);
+                console.log(todo);
+            }
+            input = prompt('what do u want to do')
+        }
+
+        console.log("FINISHED")
+    </script>
+</body>
+
+
+</html>
